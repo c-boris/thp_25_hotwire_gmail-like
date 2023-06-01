@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-8" id="col1">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Object</th>
+          <th scope="col">Content</th>
+        </tr>
+      </thead>
+      <tdiv>
+          <%@emails.reverse_each do |email|%>
+            <tr id="email<%= email.id %>">
+                <td><%=link_to email.object, email_path(email.id) , data: { controller: "emails", action: "click->emails#showEmails"} %></td>
+                <td><%=email.body%></td>
+            </tr>
+          <%end%>
+      </tbody>
+    </table>
+  </div>
+  <div class="col" id="col2">
+
+  </div>
+</div>
